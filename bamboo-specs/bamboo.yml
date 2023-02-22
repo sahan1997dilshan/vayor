@@ -13,4 +13,4 @@ stages:
 Job 1:
   tasks:
     - script:
-        - echo 'Hello world'
+        - echo 'I am sahan kudaketiyapege'
