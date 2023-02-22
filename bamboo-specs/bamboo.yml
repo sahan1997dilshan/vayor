@@ -1,44 +1,16 @@
 ---
 version: 2
 plan:
-  project-key: ITOPS
-  key: STATD
-  name: STATD-PROD
+  project-key: PROJ
+  key: PLAN
+  name: My Plan
 
 stages:
-  - Docker:
-    - containerize
-  - Build:
-    - build
-  - Clean:
-    - clean
+  - Stage 1:
+      jobs:
+        - Job 1
 
-# JOB ( containerize )
-containerize:
+Job 1:
   tasks:
     - script:
-      - docker build -t docker.io/shyamin/hello:latest .
-      - docker login --username shyamin --password "${bamboo.docker_token}" docker.io
-      - docker push docker.io/shyamin/hello:latest
-
-# JOB ( build )
-build:
-  tasks:
-    - script:
-      - make dist
-      - pwd
-      - ls -all
-  docker:
-    image: shyamin/hello:latest
-  artifacts:
-    -
-      name: statd
-      location: ${bamboo.build.working.directory}
-      pattern: statd
-      required: true
-      shared: false
-
-# JOB ( clean )
-clean:
-  tasks:
-    - clean
+        - echo 'Hello world'
