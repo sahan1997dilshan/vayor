@@ -2,8 +2,8 @@
 version: 2
 plan:
   project-key: PROJ
-  key: AS
-  name: ASA-MAIN
+  key: PLAN
+  name: My Plan
 
 stages:
   - Stage 1:
